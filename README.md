@@ -7,3 +7,4 @@ Check https://github.com/go-ffstatic/ffstatic for more information.
 ```
 go get -u github.com/go-ffstatic/freebsd-amd64
 ```
+
