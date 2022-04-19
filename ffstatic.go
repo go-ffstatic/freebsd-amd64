@@ -33,17 +33,21 @@ func writeTempExec(pattern string, binary []byte) (string, error) {
 }
 
 var (
-	FfmpegPath  string
-	FfprobePath string
+	ffmpegPath  string
+	ffprobePath string
 )
+
+func FFmpegPath() string { return ffmpegPath }
+
+func FFprobePath() string { return ffprobePath }
 
 func init() {
 	var err error
-	FfmpegPath, err = writeTempExec("ffmpeg_freebsd_amd64", ffmpeg)
+	ffmpegPath, err = writeTempExec("ffmpeg_freebsd_amd64", ffmpeg)
 	if err != nil {
 		panic(fmt.Errorf("failed to write ffmpeg_freebsd_amd64: %v", err))
 	}
-	FfprobePath, err = writeTempExec("ffprobe_freebsd_amd64", ffprobe)
+	ffprobePath, err = writeTempExec("ffprobe_freebsd_amd64", ffprobe)
 	if err != nil {
 		panic(fmt.Errorf("failed to write ffprobe_freebsd_amd64: %v", err))
 	}
